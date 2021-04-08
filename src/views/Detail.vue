@@ -35,7 +35,7 @@ import DetailComments from '@/components/DetailComments.vue';
 import DetailOperation from '@/components/DetailOperation.vue';
 import DetailReply from '@/components/DetailReply.vue';
 import { PREFIX } from '@/store/modules/list/CONSTANTS';
-import { Action } from '@/store/modules/list/list';
+import { Action } from '@/store/modules/list/list.d';
 import { PREFIX as USERPREFIX } from '@/store/modules/user/CONSTANTS';
 import { User } from '@/store/modules/user/user';
 import { getActionById } from '@/api/action';

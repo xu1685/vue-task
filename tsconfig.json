@@ -1,32 +1,75 @@
+// tsconfig.json
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
+    "target": "esnext",
+    "module": "esnext",
     "strict": true,
     "jsx": "preserve",
+    "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "node",
-      "mocha",
-      "chai"
+      "webpack-env"
     ],
     "paths": {
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
   "include": [
+    "src/**/*.js",
     "src/**/*.ts",
+    "src/**/*.tsx",
     "src/**/*.vue",
-    "tests/**/*.ts"
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }
+
+
+// {
+//   "compilerOptions": {
+//     "target": "es2015",
+//     "module": "es2015",
+//     "strict": false,
+//     "jsx": "preserve",
+//     "moduleResolution": "node",
+//     "experimentalDecorators": true,
+//     "emitDecoratorMetadata": true,
+//     "allowSyntheticDefaultImports": true,
+//     "sourceMap": true,
+//     "baseUrl": ".",
+//     "types": [
+//       "node",
+//       "mocha",
+//       "chai"
+//     ],
+//     "paths": {
+//       "@/*": [
+//         "src/*"
+//       ]
+//     }
+//   },
+//   "include": [
+//     "src/**/*.ts",
+//     "src/**/*.vue",
+//     "tests/**/*.ts"
+//   ],
+//   "exclude": [
+//     "node_modules"
+//   ]
+// }

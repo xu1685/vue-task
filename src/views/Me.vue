@@ -42,7 +42,7 @@ import { PREFIX, actions } from '@/store/modules/user/CONSTANTS';
 import { User } from '@/store/modules/user/user';
 import { Action as ActionType } from '@/store/modules/list/list';
 import { getUserActions } from '@/api/user';
-import px2px from '@/util/px2px.ts';
+import px2px from '@/util/px2px';
 
 type tabType = 'liked' | 'going' | 'past';
 

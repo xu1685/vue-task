@@ -31,7 +31,7 @@ import AppIcon from '@/components/AppIcon.vue';
 import { PREFIX, actions } from '@/store/modules/filter/CONSTANTS';
 import { Channel, Date } from '@/store/modules/filter/filter';
 import { actions as listActions } from '@/store/modules/list/CONSTANTS';
-import px2px from '@/util/px2px.ts';
+import px2px from '@/util/px2px';
 
 @Component({
   components: {

@@ -1,6 +1,55 @@
 let { devServer } = require('./.config.js');
 
+// module.exports = {
+//   /** 其他与本次改动无关的配置 */
+//   /**
+//    * @param {import('webpack-chain')} config
+//    */
+//   chainWebpack: (config) => {
+//     config
+//       .resolve.extensions.add('.ts').add('.tsx')
+//       .end().end()
+//       .module
+//       .rule('typescript')
+//       .test(/\.tsx?$/)
+//       .use('babel-loader')
+//       .loader('babel-loader')
+//       .end()
+//       .use('ts-loader')
+//       .loader('ts-loader')
+//       .options({
+//         transpileOnly: true,
+//         appendTsSuffixTo: [
+//           '\\.vue$',
+//         ],
+//         happyPackMode: false,
+//       })
+//       .end();
+//   }
+// }
+
 module.exports = {
+  chainWebpack: (config) => {
+    config
+      .resolve.extensions.add('.ts').add('.tsx')
+      .end().end()
+      .module
+      .rule('typescript')
+      .test(/\.tsx?$/)
+      .use('babel-loader')
+      .loader('babel-loader')
+      .end()
+      .use('ts-loader')
+      .loader('ts-loader')
+      .options({
+        transpileOnly: true,
+        appendTsSuffixTo: [
+          '\\.vue$',
+        ],
+        happyPackMode: false,
+      })
+      .end();
+  },
   // Project deployment base
   // By default we assume your app will be deployed at the root of a domain,
   // e.g. https://www.my-app.com/
@@ -16,11 +65,11 @@ module.exports = {
   // whether to use eslint-loader for lint on save.
   // valid values: true | false | 'error'
   // when set to 'error', lint errors will cause compilation to fail.
-  lintOnSave: true,
+  lintOnSave: false,
 
   // use the full build with in-browser compiler?
   // https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only
-  compiler: false,
+  runtimeCompiler: true,
 
   // tweak internal webpack configuration.
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
@@ -29,7 +78,7 @@ module.exports = {
 
   // vue-loader options
   // https://vue-loader.vuejs.org/en/options.html
-  vueLoader: {},
+  // vueLoader: {},
 
   // generate sourceMap for production build?
   productionSourceMap: true,
@@ -58,7 +107,7 @@ module.exports = {
   // split vendors using autoDLLPlugin?
   // can also be an explicit Array of dependencies to include in the DLL chunk.
   // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode
-  dll: false,
+  // dll: false,
 
   // options for the PWA plugin.
   // see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
@@ -68,7 +117,7 @@ module.exports = {
   devServer: {
     open: process.platform === 'darwin',
     host: '0.0.0.0',
-    port: 8080,
+    port: 3002,
     https: false,
     hotOnly: false,
     // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#configuring-proxy

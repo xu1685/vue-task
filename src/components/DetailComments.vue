@@ -16,7 +16,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import AppIcon from '@/components/AppIcon.vue';
 import { User } from '@/store/modules/user/user';
-import px2px from '@/util/px2px.ts';
+import px2px from '@/util/px2px';
 
 interface Comment {
   id: number;

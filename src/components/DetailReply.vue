@@ -16,7 +16,7 @@
 import { Component, Prop , Vue } from 'vue-property-decorator';
 import AppIcon from '@/components/AppIcon.vue';
 import {postCommentsByAId} from '@/api/comment';
-import px2px from '@/util/px2px.ts';
+import px2px from '@/util/px2px';
 
 @Component({
   components: {

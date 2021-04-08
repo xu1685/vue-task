@@ -1,7 +1,7 @@
 import { ActionTree, ActionContext, GetterTree, MutationTree } from 'vuex';
 import { getActions, getActionById, Filter } from '@/api/action';
 import { getChannels } from '@/api/channel';
-import { Action, List } from './list';
+import { Action, List } from './list.d';
 import { RootState } from '../../rootstate';
 
 const namespaced = true;

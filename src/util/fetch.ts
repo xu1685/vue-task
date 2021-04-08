@@ -46,6 +46,7 @@ export function internalFetch(type: 'GET' | 'POST' | 'DELETE') {
           stringifyBody = JSON.stringify(body);
         }
       }
+      console.log(path,'path')
       return fetch(path, {
         headers,
         method: type,

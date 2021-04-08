@@ -17,7 +17,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import AppIcon from '@/components/AppIcon.vue';
-import px2px from '@/util/px2px.ts';
+import px2px from '@/util/px2px';
 
 @Component({
   components: {

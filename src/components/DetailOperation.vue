@@ -29,6 +29,10 @@ import px2px from '@/util/px2px';
 export default class DetailOperation extends Vue {
   @Prop({required: true, default: false}) private hasJoin!: boolean;
   @Prop({required: true, default: false}) private hasLike!: boolean;
+
+  updated(){
+    console.log('udated',this.hasJoin)
+  }
   private get iconReplyStyle() {
     return {
       color: '#000000',

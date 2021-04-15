@@ -35,7 +35,7 @@ import DetailComments from '@/components/DetailComments.vue';
 import DetailOperation from '@/components/DetailOperation.vue';
 import DetailReply from '@/components/DetailReply.vue';
 import { PREFIX } from '@/store/modules/list/CONSTANTS';
-import { Action } from '@/store/modules/list/list.d';
+import { Action } from '@/store/modules/list/list';
 import { PREFIX as USERPREFIX } from '@/store/modules/user/CONSTANTS';
 import { User } from '@/store/modules/user/user';
 import { getActionById } from '@/api/action';
@@ -71,6 +71,10 @@ export default class Detail extends Vue {
   private replyTip: string = 'Leave your comment here';
   private actionData: Action | null = null;
   private comments: Comment[] = [];
+
+  updated(){
+    console.log('updated in detail',this.actionData)
+  }
   private get actionId() {
     return this.$route.params.id;
   }
@@ -137,6 +141,7 @@ export default class Detail extends Vue {
     if (data && data.id === this.actionId) {
       return (this.actionData = { ...data });
     }
+    console.log('aa')
     let cancelLoading = this.$loading();
     getActionById(this.actionId)
       .then(({ event }: { event: Action }) => {

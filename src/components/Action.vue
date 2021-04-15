@@ -51,6 +51,10 @@ import { Action } from '@/store/modules/list/list';
 export default class AppAction extends Vue {
   @Prop({ required: true })
   private item!: Action;
+
+  updated(){
+    console.log('update in list ', this.item)
+  }
   private get userIconStyle() {
     return {
       fontSize: px2px(40),
